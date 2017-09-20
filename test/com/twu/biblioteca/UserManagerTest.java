@@ -15,4 +15,10 @@ public class UserManagerTest {
         String password = "123";
         assertTrue(userManager.LoginValidate(libraryNumber, password));
     }
+
+    @Test
+    public void UserIsExsitsTest() {
+        String libraryNumber = "zdy-001";
+        assertTrue(userManager.UserIsExsits(libraryNumber));
+    }
 }
