@@ -11,7 +11,7 @@ public class UserManagerTest {
 
     @Test
     public void LoginValidateTest() {
-        String libraryNumber = "abc-123";
+        String libraryNumber = "zdy-001";
         String password = "123";
         assertTrue(userManager.LoginValidate(libraryNumber, password));
     }

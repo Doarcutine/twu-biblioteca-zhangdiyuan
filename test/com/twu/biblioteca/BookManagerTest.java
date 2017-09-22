@@ -11,19 +11,19 @@ public class BookManagerTest {
     BookManager bookManager = new BookManager();
 
     @Test
-    public void userCheckoutBookTest() {
+    public void PrintAvaliableBookListTest() {
+        bookManager.CheckoutBook("book1");
+        bookManager.PrintAvaliableBookList();
+    }
+
+    @Test
+    public void CheckoutBookTest() {
         assertTrue(bookManager.CheckoutBook("book1"));
     }
 
     @Test
-    public void userReturnBookTest() {
+    public void ReturnBookTest() {
         bookManager.CheckoutBook("book1");
         assertTrue(bookManager.ReturnBook("book1"));
-    }
-
-    @Test
-    public void printAvaliableBookListTest() {
-        bookManager.CheckoutBook("book1");
-        bookManager.PrintAvaliableBookList();
     }
 }
