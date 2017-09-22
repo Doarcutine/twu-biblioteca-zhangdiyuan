@@ -1,6 +1,7 @@
 package com.twu.biblioteca;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * Created by Doarcutine on 2017/9/20.
@@ -19,8 +20,10 @@ public class UserManager {
 
 
     public boolean LoginValidate(String libraryNumber, String password) {
-        if (libraryNumber.equals("abc-123") && password.equals("123")) {
-            return true;
+        for (User user : userList) {
+            if (user.getLibraryNumber().equals(libraryNumber) && user.getPassword().equals(password)) {
+                return true;
+            }
         }
         return false;
     }
@@ -32,5 +35,27 @@ public class UserManager {
             }
         }
         return false;
+    }
+
+    public User GetUser(String libraryNumber) {
+        for (User user : userList) {
+            if (user.getLibraryNumber().equals(libraryNumber)) {
+                return user;
+            }
+        }
+        return null;
+    }
+
+    public void DoLogin() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Please input your library number:");
+        String libraryNumber = scanner.next();
+        if (UserIsExsits(libraryNumber)) {
+            System.out.print("Please input your password:");
+            String password = scanner.next();
+            if (LoginValidate(libraryNumber, password)) {
+                Session.currentUserLibarayNumber = libraryNumber;
+            }
+        }
     }
 }

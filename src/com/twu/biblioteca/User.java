@@ -18,6 +18,13 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
+    public void ShowInformation() {
+        System.out.println("libraryNumber: " + libraryNumber);
+        System.out.println("name: " + name);
+        System.out.println("emailAddress: " + emailAddress);
+        System.out.println("phoneNumber: " + phoneNumber);
+    }
+
 
     public String getLibraryNumber() {
         return libraryNumber;

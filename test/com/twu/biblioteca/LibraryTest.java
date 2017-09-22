@@ -33,24 +33,5 @@ public class LibraryTest {
         library.printMenu();
     }
 
-    @Test
-    public void userCheckoutBookTest() {
-        assertTrue(library.userCheckoutBook("book1"));
-    }
-
-    @Test
-    public void userReturnBookTest() {
-        library.userCheckoutBook("book1");
-        assertTrue(library.userReturnBook("book1"));
-    }
-
-    @Test
-    public void printAvaliableBookListTest() {
-        library.userCheckoutBook("book1");
-        library.printAvaliableBookList();
-    }
-
-
-
 }
 
